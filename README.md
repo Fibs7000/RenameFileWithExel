@@ -2,6 +2,14 @@
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
+# Excel file rename
+
+## Usage
+
+Just open a folder, paste two excel columns (Before and after) without extensions in...abs
+
+then rename.
+
 ## Available Scripts
 
 ### npm start
