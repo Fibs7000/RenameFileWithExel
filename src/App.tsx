@@ -60,7 +60,14 @@ function App() {
     <Box flex={1} style={{ display: 'flex' }} flexDirection="column">
       <Box flex={1}>
         <Container maxWidth="md">
-          <Box margin={5}>
+          <Box margin={5} display="flex" flexDirection="column">
+            <Link
+              style={{fontSize: 30}}
+              href={'https://github.com/Fibs7000/RenameFileWithExel'}
+              align="center"
+            >
+              View Dokumentation on Github
+          </Link>
             <Stepper activeStep={activeStep}>
               {steps.map((label, index) => {
                 const stepProps: { completed?: boolean } = {};
