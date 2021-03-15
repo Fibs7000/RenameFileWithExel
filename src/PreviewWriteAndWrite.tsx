@@ -1,21 +1,18 @@
-import React from 'react';
 import {
   Box,
   Button,
-
-
-
+  Icon,
   LinearProgress,
-
-
-
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
-  TableRow
+  TableRow,
+  Tooltip,
+  Typography
 } from '@material-ui/core';
+import React from 'react';
 
 export function PreviewWriteAndWrite({
   fileNames,
@@ -71,7 +68,7 @@ export function PreviewWriteAndWrite({
                   <TableRow key={i}>
                     <TableCell>{file.name}</TableCell>
                     <TableCell>
-                      {file.newName ?? 'Could not find matching entry'}
+                      {file.newName ?? <Tooltip title="There is no file with the same name as in the excel table. This Item will be skipped and will not be renamed. Please add or change the entries in the previous page to resolve this warning." ><Box flexDirection="row" display="flex"><Icon color="error">info</Icon><Typography style={{marginLeft: 15}} color="error">Could not find matching excel entry</Typography></Box></Tooltip>}
                     </TableCell>
                   </TableRow>
                 )

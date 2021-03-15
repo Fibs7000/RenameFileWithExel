@@ -110,9 +110,14 @@ function App() {
         </Container>
       </Box>
       <Container maxWidth="md">
-        <Box margin={5} display="flex" justifyContent="flex-end">
+        <Box margin={5} display="flex" justifyContent="space-between">
           <Link
-            style={{textAlign: "right", width: "100%"}}
+            href={'https://www.seekinnovation.at/team/fabio-moretti'}
+            align="right"
+          >
+            Created by Fabio Moretti
+          </Link>
+          <Link
             href={'https://github.com/Fibs7000/RenameFileWithExel'}
             align="right"
           >

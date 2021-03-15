@@ -19,14 +19,15 @@ export function useGenerateRenamedFiles(
   return () => {
     for (const rewrite of fileReplacements) {
       if (rewrite.new.length == 0 || rewrite.old.length == 0) continue;
-      let currentFile = fileNames.find(
+      let currentFiles = fileNames.filter(
         (f) => f.name.split('.')[0] == rewrite.old,
       );
 
-      console.log('currentFile', currentFile);
-      if (!currentFile) continue;
+      if (currentFiles.length == 0) continue;
 
-      currentFile.newName = currentFile.name.replace(rewrite.old, rewrite.new);
+      currentFiles.forEach(currentFile =>
+        currentFile.newName = currentFile.name.replace(rewrite.old, rewrite.new)
+      )
     }
 
     setFileNames([...fileNames]);
