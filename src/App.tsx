@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Container,
   Link,
@@ -121,7 +122,9 @@ function App() {
           <Link
             href={'https://www.seekinnovation.at/team/fabio-moretti'}
             align="right"
+            style={{display: "flex", alignItems: "center"}}
           >
+            <Avatar alt="Fabio Moretti" style={{marginRight: 15}} src="https://assets.website-files.com/5eb4740bb31eb1edb65d7d4b/5eb47fb49ced7895719786f4_FabioAvatar%402x.png"></Avatar>
             Created by Fabio Moretti
           </Link>
           <Link
