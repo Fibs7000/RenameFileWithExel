@@ -59,8 +59,8 @@ export function PreviewWriteAndWrite({
         <TableContainer>
           <Table>
             <TableHead>
-              <TableCell>Old name</TableCell>
-              <TableCell>New name</TableCell>
+              <TableCell>Current File Name</TableCell>
+              <TableCell>New File Name</TableCell>
             </TableHead>
             <TableBody>
               {fileNames.map(
