@@ -131,7 +131,7 @@ function App() {
             href={'https://github.com/Fibs7000/RenameFileWithExel'}
             align="right"
           >
-            View on Github asd asd
+            View on GitHub
           </Link>
         </Box>
       </Container>
