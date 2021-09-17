@@ -9,19 +9,29 @@ name: Deploy to Firebase Hosting on merge
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: Production
+      url: ${{ steps.firebase_deploy.outputs.details_url }}
     steps:
       - uses: actions/checkout@v2
       - run: yarn --frozen-lockfile && yarn build
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Zip build folder
+        uses: papeloto/action-zip@v1
+        with:
+          files: build/
+          dest: build.zip
+      - name: Create Release
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
           title: "Production Build"
           files: |
-            LICENSE.txt
-            ./build/*
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+            build.zip
+      - name: Deploy to firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        id: firebase_deploy
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_EXCEL_RENAME }}'
