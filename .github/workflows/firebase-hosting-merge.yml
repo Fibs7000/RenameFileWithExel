@@ -20,3 +20,12 @@ jobs:
           projectId: excel-rename
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "Production Build"
+          files: |
+            LICENSE.txt
+            ./build/*
