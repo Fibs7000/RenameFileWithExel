@@ -2,13 +2,6 @@ import React from 'react';
 import {
   Box,
   Button,
-
-
-
-
-
-
-
   Table,
   TableBody,
   TableCell,

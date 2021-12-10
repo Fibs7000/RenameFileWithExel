@@ -69,6 +69,7 @@ function App() {
             >
               View Dokumentation on Github
           </Link>
+          <Typography variant="h6">Just open a folder, paste <b>two excel columns</b> (Before and after) without extensions in the second page. Then rename.</Typography>
             <Stepper activeStep={activeStep}>
               {steps.map((label, index) => {
                 const stepProps: { completed?: boolean } = {};
