@@ -4,6 +4,7 @@ import {
   Container,
   Link,
   Step,
+  Typography,
   StepLabel,
   Stepper,
 } from '@material-ui/core';
